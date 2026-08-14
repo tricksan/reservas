@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservas — Patrick San · Restaurante Bacharel · Cananéia</title>
+  <meta name="description" content="Reserve sua mesa com Patrick San no Restaurante Bacharel em Cananéia. Culinária oriental com pescado local, ikejime e ingredientes artesanais. Sex, Sáb e Dom.">
+  <meta property="og:title" content="Reservas — Patrick San · Restaurante Bacharel">
+  <meta property="og:description" content="Sexta, sábado e domingo no Bacharel. Sushi, sashimi, omakase e culinária oriental com pescado local de Cananéia.">
+  <meta property="og:image" content="../shared/assets/images/og/reservas-og.jpg">
+  <meta property="og:url" content="https://patricksan.com.br/reservas/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/css/design-system.css">
+  <style>
+    .nav{position:absolute;top:0;left:0;right:0;z-index:10;padding:1.375rem 0}
+    .nav__inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .nav__logo{font-family:'Playfair Display',Georgia,serif;font-size:1.1rem;font-weight:700;letter-spacing:.03em;color:#f4f2ee}
+    .nav__logo span{color:#d4872a}
+    .nav__info{font-size:.7rem;color:#9a9488;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:1.25rem}
+    .nav__info strong{color:#e8a94a;font-weight:600}
+    .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+    .hero__bg{position:absolute;inset:0;background:#0a0a08}
+    .hero__bg img{width:100%;height:100%;object-fit:cover;opacity:.52}
+    .hero__bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,8,.97) 0%,rgba(10,10,8,.5) 55%,rgba(10,10,8,.15) 100%)}
+    .hero__conteudo{position:relative;z-index:1;padding:8rem 0 3.5rem}
+    .hero__titulo{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.75rem,7vw,5.5rem);font-weight:700;line-height:1.1;letter-spacing:-.02em;margin:.75rem 0 1rem;max-width:13ch}
+    .hero__sub{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(1rem,2vw,1.3rem);color:#e8a94a;max-width:40ch;line-height:1.55;margin-bottom:2rem}
+    .hero__ctas{display:flex;flex-wrap:wrap;gap:.875rem;align-items:center;margin-bottom:2.5rem}
+    .hero__onde{display:flex;flex-wrap:wrap;gap:1.5rem}
+    .hero__onde-item{display:flex;align-items:center;gap:.5rem;font-size:.75rem;color:rgba(244,242,238,.6);font-weight:500;letter-spacing:.04em}
+    .hero__onde-item::before{content:'';width:5px;height:5px;border-radius:50%;background:#d4872a;flex-shrink:0}
+    .faixa{background:#111110;border-top:1px solid rgba(212,135,42,.15);border-bottom:1px solid rgba(212,135,42,.15);padding:1.375rem 0}
+    .faixa__inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    .horario-grupo{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+    .horario-item{text-align:center}
+    .horario-item__dia{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#d4872a;margin-bottom:.2rem}
+    .horario-item__hora{font-family:'Playfair Display',Georgia,serif;font-size:1.1rem;font-weight:700;color:#f4f2ee}
+    .horario-sep{width:1px;height:32px;background:#3a3830}
+    .faixa__end{font-size:.75rem;color:#9a9488;line-height:1.5}
+    .faixa__end strong{color:#e8a94a;display:block;font-size:.8rem}
+    .secao{padding-block:5rem}
+    .secao--sup{background:#111110}
+    .secao--sup2{background:#181816}
+    .secao__cab{text-align:center;margin-bottom:3.5rem}
+    .secao__titulo{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:700;line-height:1.15;margin-bottom:.5rem}
+    .secao__sub{font-size:1rem;color:#9a9488;max-width:460px;margin-inline:auto;line-height:1.7}
+    .divisor{width:48px;height:1.5px;background:linear-gradient(90deg,transparent,#d4872a,transparent);margin:.875rem auto}
+    .cardapio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+    .prato-card{background:#181816;border:1px solid #3a3830;border-radius:12px;overflow:hidden;transition:border-color .22s ease,transform .22s ease;display:flex;flex-direction:column}
+    .prato-card:hover{border-color:rgba(212,135,42,.4);transform:translateY(-3px)}
+    .prato-card__img{aspect-ratio:16/9;overflow:hidden;background:#111;position:relative}
+    .prato-card__img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+    .prato-card:hover .prato-card__img img{transform:scale(1.05)}
+    .prato-card__badge{position:absolute;top:.875rem;left:.875rem;background:#d4872a;color:#0a0a08;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .7rem;border-radius:999px}
+    .prato-card__corpo{padding:1.5rem;flex:1;display:flex;flex-direction:column}
+    .prato-card__titulo{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;margin-bottom:.5rem;color:#f4f2ee}
+    .prato-card__desc{font-size:.82rem;color:#9a9488;line-height:1.75;margin-bottom:1.125rem;flex:1}
+    .prato-card__itens{display:flex;flex-wrap:wrap;gap:.375rem;margin-bottom:1.25rem}
+    .item-tag{font-size:.65rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .6rem;border-radius:999px;background:rgba(212,135,42,.08);border:1px solid rgba(212,135,42,.2);color:#e8a94a}
+    .prato-card__cta{display:inline-flex;align-items:center;gap:.375rem;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#d4872a;transition:gap .22s ease}
+    .prato-card__cta:hover{gap:.625rem}
+    .prato-card__cta::after{content:'→'}
+    .avulsos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:#3a3830;border-radius:12px;overflow:hidden;margin-top:1.5rem}
+    .avulso{background:#181816;padding:1.5rem 1.25rem;transition:background .22s ease}
+    .avulso:hover{background:rgba(212,135,42,.05)}
+    .avulso__img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;margin-bottom:1rem}
+    .avulso__nome{font-family:'Playfair Display',Georgia,serif;font-size:1.1rem;margin-bottom:.375rem;color:#f4f2ee}
+    .avulso__desc{font-size:.78rem;color:#9a9488;line-height:1.6}
+    .omakase-bloco{background:#181816;border:1px solid rgba(212,135,42,.25);border-radius:12px;overflow:hidden;display:grid;grid-template-columns:1fr 1.1fr}
+    .omakase__visual{min-height:480px;background:#0a0a08;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:2.5rem}
+    .omakase__visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.6}
+    .omakase__visual::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,8,.92) 0%,rgba(10,10,8,.3) 60%,transparent 100%)}
+    .omakase__visual-texto{position:relative;z-index:1}
+    .omakase__frase{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.2rem;color:#e8a94a;line-height:1.55}
+    .omakase__corpo{padding:3rem 3.25rem;display:flex;flex-direction:column;justify-content:center}
+    .omakase__titulo{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.75rem,3vw,2.5rem);margin-bottom:1rem;color:#f4f2ee}
+    .omakase__desc{font-size:.85rem;color:#9a9488;line-height:1.85;margin-bottom:1.75rem}
+    .omakase__itens{display:flex;flex-direction:column;gap:.5rem;margin-bottom:2rem}
+    .omakase__item{display:flex;align-items:flex-start;gap:.625rem;font-size:.82rem;color:#9a9488}
+    .omakase__item::before{content:'✦';color:#d4872a;flex-shrink:0;font-size:.55rem;margin-top:4px}
+    .omakase__aviso{background:rgba(212,135,42,.07);border:1px solid rgba(212,135,42,.2);border-radius:8px;padding:.875rem 1.125rem;font-size:.78rem;color:#9a9488;line-height:1.6;margin-bottom:1.75rem}
+    .omakase__aviso strong{color:#e8a94a}
+    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:#3a3830;border-radius:12px;overflow:hidden}
+    .step{background:#111110;padding:2.25rem 1.75rem;position:relative}
+    .step__num{font-family:'Playfair Display',Georgia,serif;font-size:3.5rem;font-weight:700;color:rgba(212,135,42,.12);line-height:1;position:absolute;top:1rem;right:1.25rem}
+    .step__titulo{font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;margin-bottom:.5rem;color:#f4f2ee}
+    .step__desc{font-size:.8rem;color:#9a9488;line-height:1.7}
+    .diferenciais{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem}
+    .diferencial{padding:1.75rem 1.5rem;background:#181816;border:1px solid #3a3830;border-radius:12px;text-align:center;transition:border-color .22s ease,transform .22s ease}
+    .diferencial:hover{border-color:rgba(212,135,42,.3);transform:translateY(-2px)}
+    .diferencial__visual{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:1.125rem}
+    .diferencial__icone{font-size:1.75rem;margin-bottom:.875rem}
+    .diferencial__titulo{font-family:'Playfair Display',Georgia,serif;font-size:1rem;margin-bottom:.5rem;color:#f4f2ee}
+    .diferencial__desc{font-size:.78rem;color:#9a9488;line-height:1.65}
+    .cta-bloco{background:#111110;border:1px solid rgba(212,135,42,.2);border-radius:12px;padding:4rem 3rem;text-align:center;position:relative;overflow:hidden}
+    .cta-bloco::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(212,135,42,.08),transparent 65%);pointer-events:none}
+    .cta-bloco__inner{position:relative;z-index:1}
+    .cta-bloco__titulo{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.75rem,3.5vw,3rem);font-weight:700;margin-bottom:.75rem;color:#f4f2ee}
+    .cta-bloco__sub{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.2rem;color:#e8a94a;margin-bottom:2rem;line-height:1.55;max-width:40ch;margin-inline:auto;display:block}
+    .cta-bloco__acoes{display:flex;gap:.875rem;justify-content:center;flex-wrap:wrap}
+    .cta-bloco__nota{font-size:.72rem;color:#9a9488;margin-top:1rem}
+    .footer{background:#050504;border-top:1px solid rgba(255,255,255,.05);padding:2rem 0}
+    .footer__inner{display:flex;flex-wrap:wrap;gap:1.25rem;justify-content:space-between;align-items:center}
+    .footer__marca{font-family:'Playfair Display',Georgia,serif;font-size:1rem;color:#f4f2ee}
+    .footer__marca span{color:#d4872a}
+    .footer__copy{font-size:.7rem;color:#9a9488;margin-top:.25rem}
+    .footer__links{display:flex;gap:1.5rem;flex-wrap:wrap}
+    .footer__links a{font-size:.72rem;color:#9a9488;transition:color .22s ease}
+    .footer__links a:hover{color:#e8a94a}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 2rem;border-radius:999px;font-family:'Inter',system-ui,sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border:none;transition:transform .22s ease,box-shadow .22s ease,background .22s ease}
+    .btn:hover{transform:translateY(-2px)}
+    .btn--reservar{background:#d4872a;color:#0a0a08;box-shadow:0 4px 24px rgba(212,135,42,.35);padding:1rem 2.25rem}
+    .btn--reservar:hover{background:#e8a94a;box-shadow:0 6px 32px rgba(212,135,42,.5)}
+    .btn--fantasma{border:1.5px solid rgba(212,135,42,.4);color:#e8a94a}
+    .btn--fantasma:hover{border-color:#d4872a;background:rgba(212,135,42,.12)}
+    .btn--wa{background:#25D366;color:#fff;box-shadow:0 4px 24px rgba(37,211,102,.3)}
+    .btn--wa:hover{background:#1fbd5a}
+    .overline{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#d4872a}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+    .reveal.visivel{opacity:1;transform:translateY(0)}
+    @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+    @media(max-width:900px){.omakase-bloco{grid-template-columns:1fr}.omakase__visual{min-height:260px}.omakase__corpo{padding:2rem 1.5rem}.nav__info{display:none}}
+    @media(max-width:600px){.secao{padding-block:3.5rem}.hero__conteudo{padding-top:6rem}.cta-bloco{padding:2.5rem 1.5rem}.hero__ctas{flex-direction:column}.hero__ctas .btn{width:100%;justify-content:center}.footer__inner{flex-direction:column;text-align:center}}
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="nav">
+      <div class="container">
+        <div class="nav__inner">
+          <a href="https://patricksan.com.br" class="nav__logo">Patrick <span>San</span></a>
+          <div class="nav__info">
+            <span>Restaurante Bacharel · Cananéia</span>
+            <strong>Sex · Sáb · Dom</strong>
+          </div>
+          <a href="https://wa.me/5513981035704?text=Olá%20Patrick%2C%20quero%20fazer%20uma%20reserva%20no%20Bacharel"
+             class="btn btn--reservar" target="_blank" rel="noopener">Reservar agora</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO | FOTO: reservas-hero.jpg → renomeie IMG_5599.jpeg -->
+    <section class="hero">
+      <div class="hero__bg">
+        <img src="../shared/assets/images/reservas-hero.jpg"
+             alt="Ilha completa de sushi e sashimi por Patrick San — Restaurante Bacharel Cananéia"
+             loading="eager">
+      </div>
+      <div class="hero__conteudo container">
+        <p class="overline">Restaurante Bacharel · Cananéia, SP</p>
+        <h1 class="hero__titulo">Pescado local.<br>Técnica oriental.<br>Sem concessões.</h1>
+        <p class="hero__sub">Sushi, sashimi e culinária autoral com o peixe que Patrick San pescou — preparado e servido no Bacharel.</p>
+        <div class="hero__ctas">
+          <a href="https://wa.me/5513981035704?text=Olá%20Patrick%2C%20quero%20fazer%20uma%20reserva%20no%20Bacharel%20para%20o%20fim%20de%20semana"
+             class="btn btn--reservar" target="_blank" rel="noopener">💬 Reservar via WhatsApp</a>
+          <a href="#cardapio" class="btn btn--fantasma">Ver o cardápio</a>
+        </div>
+        <div class="hero__onde">
+          <span class="hero__onde-item">Av. Independência 835, Cananéia</span>
+          <span class="hero__onde-item">Sexta, Sábado e Domingo</span>
+          <span class="hero__onde-item">Reserva obrigatória</span>
+          <span class="hero__onde-item">50% de entrada na reserva</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAIXA HORÁRIO -->
+    <div class="faixa">
+      <div class="container">
+        <div class="faixa__inner">
+          <div class="horario-grupo">
+            <div class="horario-item"><p class="horario-item__dia">Sexta-feira</p><p class="horario-item__hora">Jantar</p></div>
+            <div class="horario-sep"></div>
+            <div class="horario-item"><p class="horario-item__dia">Sábado</p><p class="horario-item__hora">Almoço & Jantar</p></div>
+            <div class="horario-sep"></div>
+            <div class="horario-item"><p class="horario-item__dia">Domingo</p><p class="horario-item__hora">Almoço</p></div>
+          </div>
+          <div class="faixa__end"><strong>Restaurante Bacharel</strong>Av. Independência 835 · Cananéia, SP</div>
+          <a href="https://wa.me/5513981035704?text=Quero%20reservar%20uma%20mesa%20no%20Bacharel"
+             class="btn btn--reservar" target="_blank" rel="noopener" style="flex-shrink:0">Reservar</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARDÁPIO -->
+    <section class="secao secao--sup" id="cardapio">
+      <div class="container">
+        <div class="secao__cab reveal">
+          <p class="overline">O cardápio</p>
+          <div class="divisor"></div>
+          <h2 class="secao__titulo">Escolha sua experiência</h2>
+          <p class="secao__sub">Todos os peixes são abatidos com ikejime, pescados localmente e manipulados no dia.</p>
+        </div>
+        <div class="cardapio-grid">
+
+          <!-- COMBO TRADICIONAL | FOTO: combo-tradicional.jpg → renomeie IMG_5612.jpeg -->
+          <article class="prato-card reveal">
+            <div class="prato-card__img">
+              <img src="../shared/assets/images/combo-tradicional.jpg"
+                   alt="Combinado tradicional de sushi e sashimi — Patrick San">
+            </div>
+            <div class="prato-card__corpo">
+              <p class="overline" style="margin-bottom:.5rem">Opção 1</p>
+              <h3 class="prato-card__titulo">Combinado Tradicional</h3>
+              <p class="prato-card__desc">Sashimi, carpaccio, ceviche, hossomaki, uramaki, nigiri e gunkan. Salmão e peixes brancos locais da nossa costa.</p>
+              <div class="prato-card__itens">
+                <span class="item-tag">16 peças / pessoa</span>
+                <span class="item-tag">Salmão disponível</span>
+                <span class="item-tag">Peixe local</span>
+                <span class="item-tag">Shoyu incluso</span>
+              </div>
+              <a href="https://wa.me/5513981035704?text=Quero%20reservar%20o%20Combinado%20Tradicional%20no%20Bacharel"
+                 class="prato-card__cta" target="_blank" rel="noopener">Reservar esta opção</a>
+            </div>
+          </article>
+
+          <!-- COMBO ESPECIAL | FOTO: combo-especial.jpg → renomeie IMG_5613.jpeg -->
+          <article class="prato-card reveal">
+            <div class="prato-card__img">
+              <img src="../shared/assets/images/combo-especial.jpg"
+                   alt="Combinado especial — recomendação do chef Patrick San">
+              <span class="prato-card__badge">Chef recomenda</span>
+            </div>
+            <div class="prato-card__corpo">
+              <p class="overline" style="margin-bottom:.5rem">Opção 2</p>
+              <h3 class="prato-card__titulo">Combinado Especial</h3>
+              <p class="prato-card__desc">Tudo do combinado tradicional, mais: iguarias orientais, ovas, molhos especiais, toppings, maior variedade de pescado, camarão, polvo e decoração extra especial.</p>
+              <div class="prato-card__itens">
+                <span class="item-tag">16 peças / pessoa</span>
+                <span class="item-tag">Ovas</span>
+                <span class="item-tag">Camarão</span>
+                <span class="item-tag">Polvo</span>
+                <span class="item-tag">Namazuko</span>
+              </div>
+              <a href="https://wa.me/5513981035704?text=Quero%20reservar%20o%20Combinado%20Especial%20no%20Bacharel"
+                 class="prato-card__cta" target="_blank" rel="noopener">Reservar esta opção</a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- AVULSOS -->
+        <!-- avulso-carpaccio.jpg → renomeie IMG_5610.jpeg -->
+        <!-- avulso-ostra.jpg → renomeie IMG_5604.jpeg -->
+        <div class="reveal">
+          <p class="overline" style="text-align:center;margin:2rem 0 1.25rem">Também disponíveis</p>
+          <div class="avulsos-grid">
+            <div class="avulso">
+              <img class="avulso__img" src="../shared/assets/images/avulso-carpaccio.jpg" alt="Carpaccio de peixe local com Namazuko">
+              <h4 class="avulso__nome">Carpaccio</h4>
+              <p class="avulso__desc">Fatias finíssimas de peixe local com Namazuko e finalização do chef</p>
+            </div>
+            <div class="avulso">
+              <img class="avulso__img" src="../shared/assets/images/avulso-ostra.jpg" alt="Ostras frescas com Namazuko no gelo">
+              <h4 class="avulso__nome">Ostras</h4>
+              <p class="avulso__desc">Ostras frescas no gelo com Namazuko — a assinatura da casa</p>
+            </div>
+            <div class="avulso">
+              <h4 class="avulso__nome">Ceviche</h4>
+              <p class="avulso__desc">Peixe local marinado em suco cítrico com especiarias orientais</p>
+            </div>
+            <div class="avulso">
+              <h4 class="avulso__nome">Temaki</h4>
+              <p class="avulso__desc">Cone de nori com arroz temperado e recheio a escolher</p>
+            </div>
+            <div class="avulso">
+              <h4 class="avulso__nome">Hot Roll</h4>
+              <p class="avulso__desc">Roll empanado e frito com recheio quente e molho especial</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OMAKASE | FOTO: omakase-visual.jpg → renomeie IMG_5600.jpeg -->
+    <section class="secao" id="omakase">
+      <div class="container">
+        <div class="secao__cab reveal">
+          <p class="overline">Para quem quer mais</p>
+          <div class="divisor"></div>
+          <h2 class="secao__titulo">Omakase</h2>
+          <p class="secao__sub">O menu confia ao chef. Reserva com antecedência obrigatória.</p>
+        </div>
+        <div class="omakase-bloco reveal">
+          <div class="omakase__visual">
+            <img src="../shared/assets/images/omakase-visual.jpg"
+                 alt="Omakase Patrick San — prato autoral no Bacharel Cananéia">
+            <div class="omakase__visual-texto">
+              <p class="overline" style="margin-bottom:.5rem">Menu degustação</p>
+              <p class="omakase__frase">"Você senta.<br>Eu cuido do resto."</p>
+            </div>
+          </div>
+          <div class="omakase__corpo">
+            <p class="overline" style="margin-bottom:.625rem">Experiência completa</p>
+            <h3 class="omakase__titulo">16 a 20 pratos autorais</h3>
+            <p class="omakase__desc">Uma sequência harmônica de entradas, sushis, pratos autorais e sobremesa — elaborada exclusivamente para a ocasião. Ingredientes locais, artesanais e orgânicos. Nenhuma edição é igual à anterior.</p>
+            <div class="omakase__itens">
+              <div class="omakase__item">Entradas, sushis, pratos quentes e sobremesa em sequência</div>
+              <div class="omakase__item">Pescado abatido com ikejime — abate humanizado</div>
+              <div class="omakase__item">Produtos locais, artesanais e orgânicos de Cananéia</div>
+              <div class="omakase__item">Opção com Blue Fin disponível mediante consulta</div>
+              <div class="omakase__item">Reserva com antecedência obrigatória</div>
+            </div>
+            <div class="omakase__aviso">
+              O omakase é elaborado exclusivamente para cada ocasião. <strong>Entre em contato para verificar disponibilidade e combinar o menu.</strong>
+            </div>
+            <a href="https://wa.me/5513981035704?text=Olá%20Patrick%2C%20quero%20saber%20sobre%20o%20Omakase%20e%20verificar%20disponibilidade"
+               class="btn btn--reservar" target="_blank" rel="noopener">💬 Consultar omakase</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="secao secao--sup" id="como-funciona">
+      <div class="container">
+        <div class="secao__cab reveal">
+          <p class="overline">Antes de vir</p>
+          <div class="divisor"></div>
+          <h2 class="secao__titulo">Como fazer sua reserva</h2>
+        </div>
+        <div class="steps reveal">
+          <div class="step"><span class="step__num">01</span><h4 class="step__titulo">Escolha o cardápio</h4><p class="step__desc">Combinado tradicional, especial, omakase ou personalizado. Se quiser salmão ou ingrediente específico, informe neste momento.</p></div>
+          <div class="step"><span class="step__num">02</span><h4 class="step__titulo">Fale pelo WhatsApp</h4><p class="step__desc">Envie a data, horário, número de pessoas e o cardápio escolhido. Informe o formato: presencial no Bacharel, delivery ou personal chef.</p></div>
+          <div class="step"><span class="step__num">03</span><h4 class="step__titulo">Confirme com 50%</h4><p class="step__desc">Depósito de 50% do valor para confirmar a reserva. O restante é pago no dia, após o serviço.</p></div>
+          <div class="step"><span class="step__num">04</span><h4 class="step__titulo">Apareça e coma</h4><p class="step__desc">Sex, sáb ou dom no Bacharel — Av. Independência 835, Cananéia. Patrick cuida de todo o resto.</p></div>
+        </div>
+        <div style="text-align:center;margin-top:2.5rem">
+          <p style="font-size:.82rem;color:#9a9488;margin-bottom:1.25rem">Atendemos também fora de Cananéia mediante taxa de deslocamento. Eventos e personal chef sob consulta.</p>
+          <a href="https://wa.me/5513981035704?text=Olá%20Patrick%2C%20quero%20fazer%20uma%20reserva"
+             class="btn btn--reservar" target="_blank" rel="noopener">💬 Fazer reserva agora</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFERENCIAIS | diferencial-pesca.jpg → renomeie IMG_5601.jpeg -->
+    <section class="secao secao--sup2">
+      <div class="container">
+        <div class="secao__cab reveal">
+          <p class="overline">Por que é diferente</p>
+          <div class="divisor"></div>
+          <h2 class="secao__titulo">O que você encontra aqui</h2>
+        </div>
+        <div class="diferenciais reveal">
+          <div class="diferencial">
+            <img class="diferencial__visual" src="../shared/assets/images/diferencial-pesca.jpg" alt="Patrick San com robalos pescados no Lagamar">
+            <h4 class="diferencial__titulo">Pesca artesanal local</h4>
+            <p class="diferencial__desc">Patrick é pescador profissional. Os peixes vêm do Lagamar e da costa de Cananéia — ele conhece cada espécie pelo nome.</p>
+          </div>
+          <div class="diferencial">
+            <div class="diferencial__icone">⚔️</div>
+            <h4 class="diferencial__titulo">Ikejime</h4>
+            <p class="diferencial__desc">Abate humanizado de origem japonesa. Garante a textura e o sabor máximos — a diferença aparece no primeiro corte do sashimi.</p>
+          </div>
+          <div class="diferencial">
+            <div class="diferencial__icone">🐟</div>
+            <h4 class="diferencial__titulo">Namazuko</h4>
+            <p class="diferencial__desc">As ovas de bagre branco curadas por Patrick — criação autoral servida por restaurantes com estrela Michelin. Aqui, na origem.</p>
+          </div>
+          <div class="diferencial">
+            <div class="diferencial__icone">🌿</div>
+            <h4 class="diferencial__titulo">Ingredientes artesanais</h4>
+            <p class="diferencial__desc">Pancs nativas, plantas locais e produtores artesanais de Cananéia. Nada de gôndola de supermercado.</p>
+          </div>
+          <div class="diferencial">
+            <div class="diferencial__icone">👨‍🍳</div>
+            <h4 class="diferencial__titulo">Chef presente</h4>
+            <p class="diferencial__desc">Patrick serve o que pescou, prepara o que serve e conta a história de cada prato. Não tem intermediário.</p>
+          </div>
+          <div class="diferencial">
+            <div class="diferencial__icone">🏆</div>
+            <h4 class="diferencial__titulo">Reconhecido</h4>
+            <p class="diferencial__desc">Capa da Prazeres da Mesa. Mesa Disruptiva 2023. Rotas Gastronômicas de SP. Irmãos de Faca.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="secao secao--sup">
+      <div class="container">
+        <div class="cta-bloco reveal">
+          <div class="cta-bloco__inner">
+            <p class="overline" style="margin-bottom:.75rem">Sua mesa espera</p>
+            <div class="divisor"></div>
+            <h2 class="cta-bloco__titulo">Reserve seu fim de semana</h2>
+            <span class="cta-bloco__sub">Me fala a data, quantas pessoas e o que você quer comer. Eu cuido do resto.</span>
+            <div class="cta-bloco__acoes">
+              <a href="https://wa.me/5513981035704?text=Olá%20Patrick!%20Quero%20fazer%20uma%20reserva%20no%20Bacharel"
+                 class="btn btn--wa" target="_blank" rel="noopener">💬 Falar no WhatsApp</a>
+              <a href="tel:+5513981035704" class="btn btn--fantasma">Ligar para o chef</a>
+            </div>
+            <p class="cta-bloco__nota">Sex · Sáb · Dom · Av. Independência 835 · Cananéia, SP · Reserva com 50% de entrada</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <p class="footer__marca">Patrick <span>San</span></p>
+          <p class="footer__copy">© <span data-ano></span> Patrick San · Restaurante Bacharel · Cananéia, SP</p>
+        </div>
+        <nav class="footer__links">
+          <a href="https://patricksan.com.br">Site principal</a>
+          <a href="../experiencias-caicairas/">Experiências</a>
+          <a href="../cursos-mentorias/">Cursos</a>
+          <a href="../namazuko/">Namazuko</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../shared/js/lp-core.js"></script>
+</body>
+</html>
