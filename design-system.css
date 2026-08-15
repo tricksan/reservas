@@ -29,3 +29,40 @@ h1,h2,h3,h4{font-family:var(--fonte-titulo);font-weight:700;line-height:1.15;let
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
 .reveal.visivel{opacity:1;transform:translateY(0)}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* SETAS */
+.patrick-setas {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 1rem;
+  pointer-events: none;
+  z-index: 10; /* Aumentado para garantir foco sobre o slide */
+}
+
+.patrick-seta {
+  pointer-events: auto; /* Garante que os botões recebam o clique */
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(10,10,8,.6);
+  border: 1px solid rgba(212,135,42,.3);
+  color: #e8a94a;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .22s, border-color .22s;
+  backdrop-filter: blur(4px);
+  user-select: none;
+}
+
+.patrick-seta:hover {
+  background: rgba(212,135,42,.18);
+  border-color: #d4872a;
+}
