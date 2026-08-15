@@ -19,69 +19,78 @@ document.addEventListener('DOMContentLoaded',()=>{
 });
 
 <script id="patrick-slider-js">
-document.addEventListener('DOMContentLoaded', function() {
-  const track   = document.getElementById('sliderTrack');
-  const dots    = document.querySelectorAll('.patrick-dot');
-  const btnPrev = document.getElementById('seta-prev');
-  const btnNext = document.getElementById('seta-next');
+(function() {
+  function initSlider() {
+    const sliderContainer = document.getElementById('patrickSlider');
+    const track = document.getElementById('sliderTrack');
+    const dots = document.querySelectorAll('.patrick-dot');
+    
+    if (!track || !sliderContainer) return;
 
-  if (!track) return;
+    let atual = 0;
+    let autoplay;
+    const total = track.children.length || 3;
 
-  let atual = 0, autoplay;
-  const total = 3;
-
-  function ir(n) {
-    atual = (n + total) % total;
-    track.style.transform = 'translateX(-' + (atual * 100) + '%)';
-    dots.forEach(function(d, i) { 
-      d.classList.toggle('ativo', i === atual); 
-    });
-  }
-
-  function iniciarAuto() {
-    clearInterval(autoplay);
-    autoplay = setInterval(function() { ir(atual + 1); }, 4500);
-  }
-
-  if (btnPrev) {
-    btnPrev.addEventListener('click', function(e) {
-      e.stopPropagation();
-      ir(atual - 1);
-      iniciarAuto();
-    });
-  }
-
-  if (btnNext) {
-    btnNext.addEventListener('click', function(e) {
-      e.stopPropagation();
-      ir(atual + 1);
-      iniciarAuto();
-    });
-  }
-
-  dots.forEach(function(d) {
-    d.addEventListener('click', function() { 
-      ir(+d.dataset.slide); 
-      iniciarAuto(); 
-    });
-  });
-
-  var touchX = 0;
-  track.addEventListener('touchstart', function(e) { 
-    touchX = e.touches[0].clientX; 
-  }, {passive: true});
-
-  track.addEventListener('touchend', function(e) {
-    var dx = e.changedTouches[0].clientX - touchX;
-    if (Math.abs(dx) > 50) { 
-      ir(dx < 0 ? atual + 1 : atual - 1); 
-      iniciarAuto(); 
+    function ir(n) {
+      atual = (n + total) % total;
+      track.style.transform = 'translateX(-' + (atual * 100) + '%)';
+      dots.forEach(function(d, i) {
+        d.classList.toggle('ativo', i === atual);
+      });
     }
-  }, {passive: true});
 
-  track.addEventListener('mouseenter', function() { clearInterval(autoplay); });
-  track.addEventListener('mouseleave', iniciarAuto);
+    function iniciarAuto() {
+      clearInterval(autoplay);
+      autoplay = setInterval(function() { ir(atual + 1); }, 4500);
+    }
 
-  iniciarAuto();
-});
+    // Escuta cliques no container principal do slider (evita perda de evento)
+    sliderContainer.addEventListener('click', function(e) {
+      const btnPrev = e.target.closest('#seta-prev');
+      const btnNext = e.target.closest('#seta-next');
+      const dot = e.target.closest('.patrick-dot');
+
+      if (btnPrev) {
+        e.preventDefault();
+        e.stopPropagation();
+        ir(atual - 1);
+        iniciarAuto();
+      } else if (btnNext) {
+        e.preventDefault();
+        e.stopPropagation();
+        ir(atual + 1);
+        iniciarAuto();
+      } else if (dot && dot.dataset.slide !== undefined) {
+        ir(+dot.dataset.slide);
+        iniciarAuto();
+      }
+    });
+
+    // Suporte a Touch/Gesto em dispositivos móveis
+    let touchX = 0;
+    track.addEventListener('touchstart', function(e) {
+      touchX = e.touches[0].clientX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', function(e) {
+      const dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 50) {
+        ir(dx < 0 ? atual + 1 : atual - 1);
+        iniciarAuto();
+      }
+    }, { passive: true });
+
+    // Pausa o autoplay ao passar o mouse sobre o slider
+    sliderContainer.addEventListener('mouseenter', function() { clearInterval(autoplay); });
+    sliderContainer.addEventListener('mouseleave', iniciarAuto);
+
+    iniciarAuto();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSlider);
+  } else {
+    initSlider();
+  }
+})();
 </script>
