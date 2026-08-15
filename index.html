@@ -125,6 +125,198 @@
     @media(max-width:600px){.secao{padding-block:3.5rem}.hero__conteudo{padding-top:6rem}.cta-bloco{padding:2.5rem 1.5rem}.hero__ctas{flex-direction:column}.hero__ctas .btn{width:100%;justify-content:center}.footer__inner{flex-direction:column;text-align:center}}
   </style>
 </head>
+
+
+   ═══════════════════════════════════════════════════════════════
+  SEÇÃO PATRICK SAN — SLIDER COM 3 FOTOS
+  Cole este bloco SUBSTITUINDO a seção de diferenciais existente
+  (a que tem id="diferenciais" ou o div.diferenciais)
+
+  FOTOS NECESSÁRIAS em shared/assets/images/:
+  patrick-slide-1.jpg → renomeie IMG_5608
+  patrick-slide-2.jpg → renomeie IMG_5601
+  patrick-slide-3.jpg → renomeie IMG_5609
+  ═══════════════════════════════════════════════════════════════
+-->
+
+<!-- CSS — cole dentro do <style> existente na página -->
+<style id="patrick-slider-css">
+  .patrick-secao{padding-block:5rem;background:var(--preto,#0a0a08);overflow:hidden}
+  .patrick-header{text-align:center;margin-bottom:3rem}
+  .patrick-header__titulo{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:700;line-height:1.15;margin-bottom:.5rem;color:#f4f2ee}
+  .patrick-header__sub{font-size:1rem;color:#9a9488;max-width:520px;margin-inline:auto;line-height:1.7}
+
+  /* SLIDER */
+  .patrick-slider{position:relative;overflow:hidden;border-radius:16px;margin-bottom:2rem}
+  .patrick-slider__track{display:flex;transition:transform .7s cubic-bezier(.4,0,.2,1);will-change:transform}
+  .patrick-slide{flex:0 0 100%;position:relative;min-height:88svh;display:flex;align-items:flex-end}
+  .patrick-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+  .patrick-slide::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,8,.88) 0%,rgba(10,10,8,.25) 55%,transparent 100%)}
+  .patrick-slide__texto{position:relative;z-index:1;padding:2.5rem 2rem}
+  .patrick-slide__titulo{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:700;margin-bottom:.5rem;color:#f4f2ee}
+  .patrick-slide__desc{font-size:.85rem;color:rgba(244,242,238,.75);line-height:1.65;max-width:36ch}
+
+  /* DOTS */
+  .patrick-dots{display:flex;justify-content:center;gap:.625rem;margin-bottom:2.5rem}
+  .patrick-dot{width:8px;height:8px;border-radius:50%;background:#3a3830;border:none;cursor:pointer;transition:background .3s,transform .3s;padding:0}
+  .patrick-dot.ativo{background:#d4872a;transform:scale(1.35)}
+
+  /* SETAS */
+  .patrick-setas{position:absolute;top:50%;transform:translateY(-50%);display:flex;justify-content:space-between;width:100%;padding:0 1rem;pointer-events:none;z-index:2}
+  .patrick-seta{pointer-events:all;width:44px;height:44px;border-radius:50%;background:rgba(10,10,8,.6);border:1px solid rgba(212,135,42,.3);color:#e8a94a;font-size:1.25rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .22s,border-color .22s;backdrop-filter:blur(4px)}
+  .patrick-seta:hover{background:rgba(212,135,42,.18);border-color:#d4872a}
+
+  /* INFO */
+  .patrick-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:#3a3830;border-radius:12px;overflow:hidden}
+  .patrick-info-item{background:#181816;padding:2rem 1.75rem;display:flex;gap:1rem;align-items:flex-start;transition:background .22s}
+  .patrick-info-item:hover{background:rgba(212,135,42,.05)}
+  .patrick-info-item__icone{font-size:1.5rem;flex-shrink:0}
+  .patrick-info-item__titulo{font-family:'Playfair Display',Georgia,serif;font-size:1rem;margin-bottom:.375rem;color:#f4f2ee}
+  .patrick-info-item__desc{font-size:.78rem;color:#9a9488;line-height:1.65}
+
+  @media(max-width:600px){
+    .patrick-slide{min-height:92svh}
+    .patrick-slide__texto{padding:2rem 1.25rem}
+  }
+</style>
+
+<!-- HTML DA SEÇÃO — cole no lugar dos diferenciais -->
+<section class="patrick-secao" id="patrick">
+  <div class="container">
+
+    <div class="patrick-header reveal">
+      <p class="overline">O chef por trás do prato</p>
+      <div class="divisor"></div>
+      <h2 class="patrick-header__titulo">Patrick San — pescador, chef, criador</h2>
+      <p class="patrick-header__sub">As pessoas não vêm apenas pela comida. Vêm pelo chef que acorda antes do sol, mergulha no Lagamar e serve o que pescou. É esse estilo de vida que aparece no prato.</p>
+    </div>
+
+    <!-- SLIDER -->
+    <!-- patrick-slide-1.jpg → IMG_5608 | patrick-slide-2.jpg → IMG_5601 | patrick-slide-3.jpg → IMG_5609 -->
+    <div class="patrick-slider reveal" id="patrickSlider">
+      <div class="patrick-slider__track" id="sliderTrack">
+
+        <div class="patrick-slide">
+          <img src="https://i.imgur.com/hEPCX1y.jpeg"
+               alt="Patrick San com robalo pescado no Lagamar de Cananéia" loading="lazy">
+          <div class="patrick-slide__texto">
+            <h3 class="patrick-slide__titulo">Do Lagamar para a sua mesa</h3>
+            <p class="patrick-slide__desc">Patrick pesca de madrugada e serve o que capturou. O robalo do seu sashimi foi pescado esta manhã.</p>
+          </div>
+        </div>
+
+        <div class="patrick-slide">
+          <img src="https://i.imgur.com/IwgfvPp.jpeg"
+               alt="Patrick San com dois robalos enormes após mergulho no Lagamar" loading="lazy">
+          <div class="patrick-slide__texto">
+            <h3 class="patrick-slide__titulo">Pescador profissional</h3>
+            <p class="patrick-slide__desc">Mais de 20 anos no Lagamar. Conhece cada espécie, cada maré, cada estação. Esse conhecimento chega ao seu prato.</p>
+          </div>
+        </div>
+
+        <div class="patrick-slide">
+          <img src="https://i.imgur.com/EN4sMm6.jpeg"
+               alt="Patrick San com garoupa enorme após pesca submarina no litoral" loading="lazy">
+          <div class="patrick-slide__texto">
+            <h3 class="patrick-slide__titulo">Pesca submarina e culinária autoral</h3>
+            <p class="patrick-slide__desc">Capa da Prazeres da Mesa. Mesa Disruptiva 2023. Rotas Gastronômicas de SP. A excelência começa bem antes da cozinha.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SETAS -->
+      <div class="patrick-setas">
+        <button class="patrick-seta" id="seta-prev" aria-label="Foto anterior">‹</button>
+        <button class="patrick-seta" id="seta-next" aria-label="Próxima foto">›</button>
+      </div>
+    </div>
+
+    <!-- DOTS -->
+    <div class="patrick-dots">
+      <button class="patrick-dot ativo" data-slide="0" aria-label="Foto 1"></button>
+      <button class="patrick-dot" data-slide="1" aria-label="Foto 2"></button>
+      <button class="patrick-dot" data-slide="2" aria-label="Foto 3"></button>
+    </div>
+
+    <!-- INFO -->
+    <div class="patrick-info reveal">
+      <div class="patrick-info-item">
+        <span class="patrick-info-item__icone">🤿</span>
+        <div>
+          <h4 class="patrick-info-item__titulo">Ikejime</h4>
+          <p class="patrick-info-item__desc">Abate humanizado de origem japonesa. A textura e o sabor que você sente no sashimi começam nessa técnica.</p>
+        </div>
+      </div>
+      <div class="patrick-info-item">
+        <span class="patrick-info-item__icone">🐟</span>
+        <div>
+          <h4 class="patrick-info-item__titulo">Namazuko</h4>
+          <p class="patrick-info-item__desc">Criação autoral de Patrick — ovas de bagre branco curadas. Servidas por restaurantes com estrela Michelin. Aqui, na origem.</p>
+        </div>
+      </div>
+      <div class="patrick-info-item">
+        <span class="patrick-info-item__icone">🏆</span>
+        <div>
+          <h4 class="patrick-info-item__titulo">Reconhecimento</h4>
+          <p class="patrick-info-item__desc">Capa da Prazeres da Mesa, Mesa Disruptiva 2023, Rotas Gastronômicas SP e Irmãos de Faca.</p>
+        </div>
+      </div>
+      <div class="patrick-info-item">
+        <span class="patrick-info-item__icone">🌿</span>
+        <div>
+          <h4 class="patrick-info-item__titulo">Ingredientes artesanais</h4>
+          <p class="patrick-info-item__desc">Pancs nativas, plantas locais e produtores artesanais de Cananéia. Nada de gôndola de supermercado.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SCRIPT DO SLIDER — cole antes do </body> -->
+<script id="patrick-slider-js">
+(function(){
+  const track   = document.getElementById('sliderTrack');
+  const dots    = document.querySelectorAll('.patrick-dot');
+  const btnPrev = document.getElementById('seta-prev');
+  const btnNext = document.getElementById('seta-next');
+  if(!track) return;
+  let atual = 0, autoplay;
+  const total = 3;
+
+  function ir(n){
+    atual = (n + total) % total;
+    track.style.transform = 'translateX(-' + (atual * 100) + '%)';
+    dots.forEach(function(d,i){ d.classList.toggle('ativo', i === atual); });
+  }
+
+  function iniciarAuto(){
+    clearInterval(autoplay);
+    autoplay = setInterval(function(){ ir(atual + 1); }, 4500);
+  }
+
+  btnPrev.addEventListener('click', function(){ ir(atual - 1); iniciarAuto(); });
+  btnNext.addEventListener('click', function(){ ir(atual + 1); iniciarAuto(); });
+  dots.forEach(function(d){
+    d.addEventListener('click', function(){ ir(+d.dataset.slide); iniciarAuto(); });
+  });
+
+  var touchX = 0;
+  track.addEventListener('touchstart', function(e){ touchX = e.touches[0].clientX; }, {passive:true});
+  track.addEventListener('touchend', function(e){
+    var dx = e.changedTouches[0].clientX - touchX;
+    if(Math.abs(dx) > 50){ ir(dx < 0 ? atual + 1 : atual - 1); iniciarAuto(); }
+  }, {passive:true});
+
+  track.addEventListener('mouseenter', function(){ clearInterval(autoplay); });
+  track.addEventListener('mouseleave', iniciarAuto);
+
+  iniciarAuto();
+})();
+</script>
+
+  
 <body>
 
   <header>
