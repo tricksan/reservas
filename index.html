@@ -161,6 +161,57 @@
     .patrick-slide{min-height:92svh}
     .patrick-slide__texto{padding:2rem 1.25rem}
   }
+    /* CONTAINER DO SLIDER */
+.patrick-slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  user-select: none;
+}
+
+/* SETAS COM Z-INDEX ELEVADO E ÁREA DE CLIQUE GARANTIDA */
+.patrick-setas {
+  position: absolute;
+  inset: 0; /* Preenche todo o slider para posicionar com precisão */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  pointer-events: none; /* Deixa passar clique no meio */
+  z-index: 20; /* Fica acima das imagens e do gradiente (z-index: 1) */
+}
+
+.patrick-seta {
+  pointer-events: auto !important; /* Força recepção de clique */
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(10, 10, 8, 0.75);
+  border: 1px solid rgba(212, 135, 42, 0.5);
+  color: #e8a94a;
+  font-size: 1.5rem;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  outline: none;
+}
+
+.patrick-seta:hover {
+  background: rgba(212, 135, 42, 0.3);
+  border-color: #d4872a;
+  color: #fff;
+  transform: scale(1.08);
+}
+
+.patrick-seta:active {
+  transform: scale(0.95);
+}
     </style>
   </style>
 </head>
