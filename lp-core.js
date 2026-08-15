@@ -18,30 +18,5 @@ document.addEventListener('DOMContentLoaded',()=>{
   }
 });
 
-<script id="patrick-slider-js">
-(function() {
-  function initSlider() {
-    const sliderContainer = document.getElementById('patrickSlider');
-    const track = document.getElementById('sliderTrack');
-    const dots = document.querySelectorAll('.patrick-dot');
-    
-    if (!track || !sliderContainer) return;
-
-    let atual = 0;
-    let autoplay;
-    const total = track.children.length || 3;
-
-    function ir(n) {
-      atual = (n + total) % total;
-      track.style.transform = 'translateX(-' + (atual * 100) + '%)';
-      dots.forEach(function(d, i) {
-        d.classList.toggle('ativo', i === atual);
-      });
-    }
-
-    function iniciarAuto() {
-      clearInterval(autoplay);
-      autoplay = setInterval(function() { ir(atual + 1); }, 4500);
-    }
 
     
