@@ -123,24 +123,7 @@
     @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
     @media(max-width:900px){.omakase-bloco{grid-template-columns:1fr}.omakase__visual{min-height:260px}.omakase__corpo{padding:2rem 1.5rem}.nav__info{display:none}}
     @media(max-width:600px){.secao{padding-block:3.5rem}.hero__conteudo{padding-top:6rem}.cta-bloco{padding:2.5rem 1.5rem}.hero__ctas{flex-direction:column}.hero__ctas .btn{width:100%;justify-content:center}.footer__inner{flex-direction:column;text-align:center}}
-  </style>
-</head>
-
-
-   ═══════════════════════════════════════════════════════════════
-  SEÇÃO PATRICK SAN — SLIDER COM 3 FOTOS
-  Cole este bloco SUBSTITUINDO a seção de diferenciais existente
-  (a que tem id="diferenciais" ou o div.diferenciais)
-
-  FOTOS NECESSÁRIAS em shared/assets/images/:
-  patrick-slide-1.jpg → renomeie IMG_5608
-  patrick-slide-2.jpg → renomeie IMG_5601
-  patrick-slide-3.jpg → renomeie IMG_5609
-  ═══════════════════════════════════════════════════════════════
--->
-
-<!-- CSS — cole dentro do <style> existente na página -->
-<style id="patrick-slider-css">
+    <style id="patrick-slider-css">
   .patrick-secao{padding-block:5rem;background:var(--preto,#0a0a08);overflow:hidden}
   .patrick-header{text-align:center;margin-bottom:3rem}
   .patrick-header__titulo{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:700;line-height:1.15;margin-bottom:.5rem;color:#f4f2ee}
@@ -178,101 +161,9 @@
     .patrick-slide{min-height:92svh}
     .patrick-slide__texto{padding:2rem 1.25rem}
   }
-</style>
-
-<!-- HTML DA SEÇÃO — cole no lugar dos diferenciais -->
-<section class="patrick-secao" id="patrick">
-  <div class="container">
-
-    <div class="patrick-header reveal">
-      <p class="overline">O chef por trás do prato</p>
-      <div class="divisor"></div>
-      <h2 class="patrick-header__titulo">Patrick San — pescador, chef, criador</h2>
-      <p class="patrick-header__sub">As pessoas não vêm apenas pela comida. Vêm pelo chef que acorda antes do sol, mergulha no Lagamar e serve o que pescou. É esse estilo de vida que aparece no prato.</p>
-    </div>
-
-    <!-- SLIDER -->
-    <!-- patrick-slide-1.jpg → IMG_5608 | patrick-slide-2.jpg → IMG_5601 | patrick-slide-3.jpg → IMG_5609 -->
-    <div class="patrick-slider reveal" id="patrickSlider">
-      <div class="patrick-slider__track" id="sliderTrack">
-
-        <div class="patrick-slide">
-          <img src="https://i.imgur.com/hEPCX1y.jpeg"
-               alt="Patrick San com robalo pescado no Lagamar de Cananéia" loading="lazy">
-          <div class="patrick-slide__texto">
-            <h3 class="patrick-slide__titulo">Do Lagamar para a sua mesa</h3>
-            <p class="patrick-slide__desc">Patrick pesca de madrugada e serve o que capturou. O robalo do seu sashimi foi pescado esta manhã.</p>
-          </div>
-        </div>
-
-        <div class="patrick-slide">
-          <img src="https://i.imgur.com/IwgfvPp.jpeg"
-               alt="Patrick San com dois robalos enormes após mergulho no Lagamar" loading="lazy">
-          <div class="patrick-slide__texto">
-            <h3 class="patrick-slide__titulo">Pescador profissional</h3>
-            <p class="patrick-slide__desc">Mais de 20 anos no Lagamar. Conhece cada espécie, cada maré, cada estação. Esse conhecimento chega ao seu prato.</p>
-          </div>
-        </div>
-
-        <div class="patrick-slide">
-          <img src="https://i.imgur.com/EN4sMm6.jpeg"
-               alt="Patrick San com garoupa enorme após pesca submarina no litoral" loading="lazy">
-          <div class="patrick-slide__texto">
-            <h3 class="patrick-slide__titulo">Pesca submarina e culinária autoral</h3>
-            <p class="patrick-slide__desc">Capa da Prazeres da Mesa. Mesa Disruptiva 2023. Rotas Gastronômicas de SP. A excelência começa bem antes da cozinha.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- SETAS -->
-      <div class="patrick-setas">
-        <button class="patrick-seta" id="seta-prev" aria-label="Foto anterior">‹</button>
-        <button class="patrick-seta" id="seta-next" aria-label="Próxima foto">›</button>
-      </div>
-    </div>
-
-    <!-- DOTS -->
-    <div class="patrick-dots">
-      <button class="patrick-dot ativo" data-slide="0" aria-label="Foto 1"></button>
-      <button class="patrick-dot" data-slide="1" aria-label="Foto 2"></button>
-      <button class="patrick-dot" data-slide="2" aria-label="Foto 3"></button>
-    </div>
-
-    <!-- INFO -->
-    <div class="patrick-info reveal">
-      <div class="patrick-info-item">
-        <span class="patrick-info-item__icone">🤿</span>
-        <div>
-          <h4 class="patrick-info-item__titulo">Ikejime</h4>
-          <p class="patrick-info-item__desc">Abate humanizado de origem japonesa. A textura e o sabor que você sente no sashimi começam nessa técnica.</p>
-        </div>
-      </div>
-      <div class="patrick-info-item">
-        <span class="patrick-info-item__icone">🐟</span>
-        <div>
-          <h4 class="patrick-info-item__titulo">Namazuko</h4>
-          <p class="patrick-info-item__desc">Criação autoral de Patrick — ovas de bagre branco curadas. Servidas por restaurantes com estrela Michelin. Aqui, na origem.</p>
-        </div>
-      </div>
-      <div class="patrick-info-item">
-        <span class="patrick-info-item__icone">🏆</span>
-        <div>
-          <h4 class="patrick-info-item__titulo">Reconhecimento</h4>
-          <p class="patrick-info-item__desc">Capa da Prazeres da Mesa, Mesa Disruptiva 2023, Rotas Gastronômicas SP e Irmãos de Faca.</p>
-        </div>
-      </div>
-      <div class="patrick-info-item">
-        <span class="patrick-info-item__icone">🌿</span>
-        <div>
-          <h4 class="patrick-info-item__titulo">Ingredientes artesanais</h4>
-          <p class="patrick-info-item__desc">Pancs nativas, plantas locais e produtores artesanais de Cananéia. Nada de gôndola de supermercado.</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
+    </style>
+  </style>
+</head>
 
 <!-- SCRIPT DO SLIDER — cole antes do </body> -->
 <script id="patrick-slider-js">
@@ -508,6 +399,100 @@
         </div>
       </div>
     </section>
+
+    <!-- HTML DA SEÇÃO — cole no lugar dos diferenciais -->
+<section class="patrick-secao" id="patrick">
+  <div class="container">
+
+    <div class="patrick-header reveal">
+      <p class="overline">O chef por trás do prato</p>
+      <div class="divisor"></div>
+      <h2 class="patrick-header__titulo">Patrick San — pescador, chef, criador</h2>
+      <p class="patrick-header__sub">As pessoas não vêm apenas pela comida. Vêm pelo chef que acorda antes do sol, mergulha no Lagamar e serve o que pescou. É esse estilo de vida que aparece no prato.</p>
+    </div>
+
+    <!-- SLIDER -->
+    <!-- patrick-slide-1.jpg → IMG_5608 | patrick-slide-2.jpg → IMG_5601 | patrick-slide-3.jpg → IMG_5609 -->
+    <div class="patrick-slider reveal" id="patrickSlider">
+      <div class="patrick-slider__track" id="sliderTrack">
+
+        <div class="patrick-slide">
+          <img src="https://i.imgur.com/hEPCX1y.jpeg"
+               alt="Patrick San com robalo pescado no Lagamar de Cananéia" loading="lazy">
+          <div class="patrick-slide__texto">
+            <h3 class="patrick-slide__titulo">Do Lagamar para a sua mesa</h3>
+            <p class="patrick-slide__desc">Patrick pesca de madrugada e serve o que capturou. O robalo do seu sashimi foi pescado esta manhã.</p>
+          </div>
+        </div>
+
+        <div class="patrick-slide">
+          <img src="https://i.imgur.com/IwgfvPp.jpeg"
+               alt="Patrick San com dois robalos enormes após mergulho no Lagamar" loading="lazy">
+          <div class="patrick-slide__texto">
+            <h3 class="patrick-slide__titulo">Pescador profissional</h3>
+            <p class="patrick-slide__desc">Mais de 20 anos no Lagamar. Conhece cada espécie, cada maré, cada estação. Esse conhecimento chega ao seu prato.</p>
+          </div>
+        </div>
+
+        <div class="patrick-slide">
+          <img src="https://i.imgur.com/EN4sMm6.jpeg"
+               alt="Patrick San com garoupa enorme após pesca submarina no litoral" loading="lazy">
+          <div class="patrick-slide__texto">
+            <h3 class="patrick-slide__titulo">Pesca submarina e culinária autoral</h3>
+            <p class="patrick-slide__desc">Capa da Prazeres da Mesa. Mesa Disruptiva 2023. Rotas Gastronômicas de SP. A excelência começa bem antes da cozinha.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SETAS -->
+      <div class="patrick-setas">
+        <button class="patrick-seta" id="seta-prev" aria-label="Foto anterior">‹</button>
+        <button class="patrick-seta" id="seta-next" aria-label="Próxima foto">›</button>
+      </div>
+    </div>
+
+    <!-- DOTS -->
+    <div class="patrick-dots">
+      <button class="patrick-dot ativo" data-slide="0" aria-label="Foto 1"></button>
+      <button class="patrick-dot" data-slide="1" aria-label="Foto 2"></button>
+      <button class="patrick-dot" data-slide="2" aria-label="Foto 3"></button>
+    </div>
+
+    <!-- INFO -->
+    <div class="patrick-info reveal">
+      <div class="patrick-info-item">
+        <span class="patrick-info-item__icone">🤿</span>
+        <div>
+          <h4 class="patrick-info-item__titulo">Ikejime</h4>
+          <p class="patrick-info-item__desc">Abate humanizado de origem japonesa. A textura e o sabor que você sente no sashimi começam nessa técnica.</p>
+        </div>
+      </div>
+      <div class="patrick-info-item">
+        <span class="patrick-info-item__icone">🐟</span>
+        <div>
+          <h4 class="patrick-info-item__titulo">Namazuko</h4>
+          <p class="patrick-info-item__desc">Criação autoral de Patrick — ovas de bagre branco curadas. Servidas por restaurantes com estrela Michelin. Aqui, na origem.</p>
+        </div>
+      </div>
+      <div class="patrick-info-item">
+        <span class="patrick-info-item__icone">🏆</span>
+        <div>
+          <h4 class="patrick-info-item__titulo">Reconhecimento</h4>
+          <p class="patrick-info-item__desc">Capa da Prazeres da Mesa, Mesa Disruptiva 2023, Rotas Gastronômicas SP e Irmãos de Faca.</p>
+        </div>
+      </div>
+      <div class="patrick-info-item">
+        <span class="patrick-info-item__icone">🌿</span>
+        <div>
+          <h4 class="patrick-info-item__titulo">Ingredientes artesanais</h4>
+          <p class="patrick-info-item__desc">Pancs nativas, plantas locais e produtores artesanais de Cananéia. Nada de gôndola de supermercado.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
     <!-- COMO FUNCIONA -->
     <section class="secao secao--sup" id="como-funciona">
