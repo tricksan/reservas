@@ -27,6 +27,12 @@ h1,h2,h3,h4{font-family:var(--fonte-titulo);font-weight:700;line-height:1.15;let
 .divisor{width:48px;height:1.5px;background:linear-gradient(90deg,transparent,var(--ambar),transparent);margin:.875rem auto}
 .divisor--esq{margin-left:0}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+
+/* Força todo o conteúdo a aparecer mesmo se o JS falhar */
+.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
 .reveal.visivel{opacity:1;transform:translateY(0)}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 
