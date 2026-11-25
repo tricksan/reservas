@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cursos de cozinha japonesa — Chef Patrick San</title>
+<meta name="description" content="Aprenda técnicas de sushi e sashimi com o Chef Patrick San, sushiman e pescador artesanal de Cananéia. Cursos online com acesso imediato.">
+
+<!-- ============================================================
+     PIXEL DO META — substituir SEU_PIXEL_ID pelo número real
+     Instalar ANTES de publicar. Sem ele o anúncio trabalha às cegas.
+     ============================================================ -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'SEU_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   DESIGN SYSTEM PATRICK SAN
+   Tokens idênticos aos de assets/css/style.css
+   ============================================================ */
+:root{
+  --noite-mangue:#0A1009;
+  --verde-mangue:#1E2B1F;
+  --azul-lagamar:#1C3040;
+  --areia:#C4A87A;
+  --terra-defumada:#6B4226;
+  --creme:#F5F0E6;
+  --offwhite:#FAFAF7;
+  --quase-preto:#1A1A18;
+  --cinza-quente:#5A5850;
+
+  --display:'Cormorant Garamond',Georgia,serif;
+  --corpo:'Inter',system-ui,-apple-system,sans-serif;
+
+  --max:640px;
+  --gut:clamp(1.25rem,5vw,2rem);
+  --bloco:clamp(3.5rem,10vw,6rem);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--offwhite);
+  color:var(--quase-preto);
+  font-family:var(--corpo);
+  font-size:15px;
+  font-weight:300;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img,video{max-width:100%;height:auto;display:block}
+
+h1,h2,h3{
+  font-family:var(--display);
+  font-weight:300;
+  line-height:1.12;
+  letter-spacing:.005em;
+  margin:0;
+}
+h1{font-size:clamp(2.1rem,8.5vw,3.5rem)}
+h2{font-size:clamp(1.7rem,6.5vw,2.5rem)}
+h3{font-size:clamp(1.25rem,5vw,1.7rem)}
+p{margin:0 0 1.1em}
+p:last-child{margin-bottom:0}
+
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
+.bloco{padding-top:var(--bloco);padding-bottom:var(--bloco)}
+
+/* ---------- Botões ---------- */
+.btn{
+  display:block;
+  width:100%;
+  padding:1.15rem 1.5rem;
+  border:0;
+  border-radius:0;
+  background:var(--areia);
+  color:var(--verde-mangue);
+  font-family:var(--corpo);
+  font-size:11.5px;
+  font-weight:500;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  text-align:center;
+  text-decoration:none;
+  cursor:pointer;
+  transition:background .45s ease;
+}
+.btn:hover,.btn:focus-visible{background:#D6BE93}
+
+.btn-fantasma-claro{
+  background:transparent;
+  color:var(--creme);
+  border:1px solid rgba(245,240,230,.22);
+  transition:border-color .45s ease;
+}
+.btn-fantasma-claro:hover,.btn-fantasma-claro:focus-visible{
+  background:transparent;border-color:rgba(245,240,230,.5)
+}
+
+.btn-fantasma-escuro{
+  background:transparent;
+  color:var(--cinza-quente);
+  border:1px solid rgba(26,26,24,.15);
+  transition:border-color .45s ease;
+}
+.btn-fantasma-escuro:hover,.btn-fantasma-escuro:focus-visible{
+  background:transparent;border-color:rgba(26,26,24,.4)
+}
+
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--areia);outline-offset:3px}
+
+.sob-btn{
+  margin-top:.9rem;
+  font-size:12.5px;
+  line-height:1.7;
+  color:var(--cinza-quente);
+  text-align:center;
+}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;background:var(--noite-mangue);color:var(--creme)}
+.hero-media{position:relative;aspect-ratio:4/5;background:var(--verde-mangue);overflow:hidden}
+@media(min-width:700px){.hero-media{aspect-ratio:1/1}}
+.hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover}
+.hero-media::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(10,16,9,.15) 40%,rgba(10,16,9,.92) 100%);
+}
+.hero-texto{position:relative;padding-top:2.5rem;padding-bottom:3.25rem;margin-top:-4rem;z-index:2}
+.hero h1{color:var(--creme)}
+.hero-sub{
+  margin-top:1.35rem;
+  color:rgba(245,240,230,.72);
+  font-size:14.5px;
+  line-height:1.75;
+  max-width:38ch;
+}
+.hero .btn{margin-top:2rem}
+
+/* ---------- Autoridade ---------- */
+.autoridade p{color:var(--cinza-quente);max-width:62ch}
+.autoridade .retrato{margin-bottom:2.25rem;aspect-ratio:3/2;background:#E4DED0;overflow:hidden}
+.autoridade .retrato img{width:100%;height:100%;object-fit:cover}
+
+.fatos{margin-top:2.5rem;border-top:1px solid rgba(26,26,24,.12)}
+.fato{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:1.5rem;
+  padding:1.05rem 0;
+  border-bottom:1px solid rgba(26,26,24,.12);
+}
+.fato dt{font-family:var(--display);font-size:1.15rem;line-height:1.3}
+.fato dd{margin:0;font-size:13px;color:var(--cinza-quente);text-align:right;max-width:20ch}
+
+/* ---------- Oferta principal (o momento forte da página) ---------- */
+.oferta{background:var(--verde-mangue);color:var(--creme)}
+.oferta h2{color:var(--creme)}
+.oferta .lede{margin-top:1.35rem;color:rgba(245,240,230,.78);max-width:56ch}
+.oferta-media{aspect-ratio:3/2;background:var(--noite-mangue);overflow:hidden;margin-bottom:2.25rem}
+.oferta-media img{width:100%;height:100%;object-fit:cover}
+
+.aulas{list-style:none;margin:2.25rem 0 0;padding:0}
+.aulas li{
+  padding:.95rem 0 .95rem 1.6rem;
+  border-bottom:1px solid rgba(245,240,230,.14);
+  position:relative;
+  color:rgba(245,240,230,.86);
+  font-size:14.5px;
+}
+.aulas li::before{
+  content:"";position:absolute;left:0;top:1.55rem;
+  width:6px;height:1px;background:var(--areia);
+}
+
+.preco{margin-top:2.75rem;padding-top:2rem;border-top:1px solid rgba(196,168,122,.35)}
+.preco .valor{font-family:var(--display);font-size:clamp(2.6rem,11vw,3.6rem);line-height:1;color:var(--areia)}
+.preco .parcela{margin-top:.6rem;font-size:13.5px;color:rgba(245,240,230,.65)}
+.oferta .btn{margin-top:1.75rem}
+.oferta .sob-btn{color:rgba(245,240,230,.6)}
+
+/* ---------- Objeções ---------- */
+.objecao{padding:1.75rem 0;border-bottom:1px solid rgba(26,26,24,.1)}
+.objecao:first-of-type{border-top:1px solid rgba(26,26,24,.1)}
+.objecao h3{font-style:italic;color:var(--quase-preto)}
+.objecao p{margin-top:.8rem;color:var(--cinza-quente);max-width:60ch}
+
+/* ---------- Prova ---------- */
+.prova{background:var(--creme)}
+.nota{
+  font-family:var(--display);
+  font-size:clamp(3rem,14vw,4.5rem);
+  line-height:1;
+  color:var(--terra-defumada);
+}
+.nota-legenda{margin-top:.5rem;font-size:13px;color:var(--cinza-quente)}
+.depoimento{
+  margin:2.25rem 0 0;
+  padding-left:1.25rem;
+  border-left:2px solid var(--areia);
+  font-family:var(--display);
+  font-size:1.3rem;
+  font-style:italic;
+  line-height:1.5;
+}
+.depoimento cite{
+  display:block;margin-top:.85rem;
+  font-family:var(--corpo);font-size:12.5px;font-style:normal;
+  color:var(--cinza-quente);
+}
+
+/* ---------- Garantia ---------- */
+.garantia{background:var(--azul-lagamar);color:var(--creme)}
+.garantia h2{color:var(--creme)}
+.garantia p{margin-top:1.25rem;color:rgba(245,240,230,.8);max-width:52ch}
+
+/* ---------- Curso secundário ---------- */
+.secundario{border:1px solid rgba(26,26,24,.14);padding:clamp(1.5rem,6vw,2.25rem)}
+.secundario h3{margin-bottom:.9rem}
+.secundario p{color:var(--cinza-quente);font-size:14.5px}
+.secundario .valor-menor{
+  font-family:var(--display);font-size:1.9rem;line-height:1;
+  color:var(--terra-defumada);margin:1.35rem 0 1.25rem;
+}
+
+/* ---------- Profissional ---------- */
+.profissional{background:var(--noite-mangue);color:var(--creme)}
+.profissional h2{color:var(--creme)}
+.profissional .intro{margin-top:1.25rem;color:rgba(245,240,230,.7);max-width:52ch}
+.profissional-media{aspect-ratio:3/2;background:var(--verde-mangue);overflow:hidden;margin-bottom:2.5rem}
+.profissional-media img{width:100%;height:100%;object-fit:cover}
+.publicos{list-style:none;margin:1.4rem 0 0;padding:0}
+.publicos li{
+  padding:.7rem 0 .7rem 1.6rem;
+  position:relative;
+  color:rgba(245,240,230,.72);
+  font-size:14px;
+  line-height:1.6;
+}
+.publicos li::before{
+  content:"";position:absolute;left:0;top:1.4rem;
+  width:6px;height:1px;background:var(--areia);
+}
+.servico{padding:1.75rem 0;border-bottom:1px solid rgba(245,240,230,.14)}
+.servico:first-of-type{margin-top:2.5rem;border-top:1px solid rgba(245,240,230,.14)}
+.servico h3{color:var(--creme)}
+.servico p{margin-top:.7rem;color:rgba(245,240,230,.68);font-size:14.5px;max-width:54ch}
+.profissional .btn{margin-top:2.25rem}
+
+/* ---------- Fechamento ---------- */
+.fecho-media{aspect-ratio:3/2;background:#E4DED0;overflow:hidden}
+.fecho-media img{width:100%;height:100%;object-fit:cover}
+.fecho{text-align:center}
+.fecho p{margin-top:1.1rem;color:var(--cinza-quente)}
+.fecho .valor{
+  font-family:var(--display);font-size:clamp(2.4rem,10vw,3.2rem);
+  line-height:1;color:var(--terra-defumada);margin:1.75rem 0 .4rem;
+}
+.fecho .parcela{font-size:13px;color:var(--cinza-quente);margin-bottom:1.75rem}
+
+/* ---------- Rodapé ---------- */
+footer{background:var(--verde-mangue);color:rgba(245,240,230,.6);padding:2.75rem 0;font-size:12.5px}
+footer .marca{font-family:var(--display);font-size:1.4rem;color:var(--creme);margin-bottom:.35rem}
+footer a{color:rgba(245,240,230,.6);text-decoration:none;border-bottom:1px solid rgba(245,240,230,.22)}
+footer a:hover{color:var(--creme)}
+footer nav{margin-top:1.35rem;display:flex;gap:1.5rem;flex-wrap:wrap}
+
+
+/* ---------- Encontre seu caminho ---------- */
+.caminhos{background:var(--creme)}
+.caminhos .intro{margin-top:1.25rem;color:var(--cinza-quente);max-width:50ch}
+.caminho{border:1px solid rgba(26,26,24,.14);background:var(--offwhite);margin-top:2rem}
+.caminho-media{aspect-ratio:3/2;background:#E4DED0;overflow:hidden}
+.caminho-media img{width:100%;height:100%;object-fit:cover}
+.caminho-corpo{padding:clamp(1.5rem,6vw,2.15rem)}
+.caminho h3{margin-bottom:.85rem}
+.caminho p{color:var(--cinza-quente);font-size:14.5px}
+.caminho .valor-menor{font-family:var(--display);font-size:2.1rem;line-height:1;color:var(--terra-defumada);margin:1.5rem 0 .35rem}
+.caminho .garantia-linha{font-size:12.5px;color:var(--cinza-quente);margin:0 0 1.4rem}
+
+/* ---------- Dúvidas / WhatsApp ---------- */
+.duvidas{background:var(--azul-lagamar);color:var(--creme);text-align:center}
+.duvidas h2{color:var(--creme)}
+.duvidas p{margin:1.15rem auto 0;color:rgba(245,240,230,.8);max-width:44ch}
+.duvidas .btn{margin-top:1.9rem}
+
+/* ---------- Blocos de imagem reutilizáveis ---------- */
+.figura{aspect-ratio:3/2;background:#E4DED0;overflow:hidden;margin:0 0 2.25rem}
+.figura img{width:100%;height:100%;object-fit:cover}
+.figura-escura{background:var(--verde-mangue)}
+.dupla{display:grid;grid-template-columns:1fr;gap:.9rem;margin:1.6rem 0 0}
+@media(min-width:560px){.dupla{grid-template-columns:1fr 1fr}}
+.dupla figure{margin:0;aspect-ratio:3/2;background:var(--verde-mangue);overflow:hidden}
+.dupla img{width:100%;height:100%;object-fit:cover}
+.servico-media{aspect-ratio:3/2;background:var(--verde-mangue);overflow:hidden;margin:1.5rem 0 0}
+.servico-media img{width:100%;height:100%;object-fit:cover}
+
+/* ---------- Maturação ---------- */
+.maturacao{background:var(--creme)}
+.maturacao p{color:var(--cinza-quente);max-width:58ch}
+.maturacao .btn{margin-top:2rem}
+
+/* ---------- Encerramento ---------- */
+.encerramento{text-align:center}
+.encerramento p{margin-top:1.15rem;color:var(--cinza-quente);max-width:46ch;margin-left:auto;margin-right:auto}
+
+/* ---------- Proporções alternativas de imagem ---------- */
+/* Fotos verticais: caixa quadrada ou 4:5 em vez de 3:2, para não cortar o assunto */
+.media-quadrada{aspect-ratio:1/1}
+.media-alta{aspect-ratio:4/5}
+
+/* ---------- Link de reserva ---------- */
+.link-reserva{color:inherit;text-decoration:none;border-bottom:1px solid var(--areia);transition:color .35s ease}
+.link-reserva:hover,.link-reserva:focus-visible{color:var(--terra-defumada)}
+.linha-reserva{margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid rgba(26,26,24,.12);font-size:14px;color:var(--cinza-quente)}
+.linha-reserva a{color:var(--quase-preto);text-decoration:none;border-bottom:1px solid var(--areia)}
+
+/* ---------- Botão flutuante de WhatsApp ---------- */
+.wpp-flutuante{
+  position:fixed;
+  right:clamp(1rem,4vw,1.75rem);
+  bottom:clamp(1rem,4vw,1.75rem);
+  z-index:50;
+  width:56px;height:56px;
+  border-radius:50%;
+  background:var(--areia);
+  color:var(--verde-mangue);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 20px rgba(10,16,9,.28);
+  transition:background .45s ease,transform .45s ease;
+}
+.wpp-flutuante:hover,.wpp-flutuante:focus-visible{background:#D6BE93;transform:translateY(-2px)}
+.wpp-flutuante svg{width:26px;height:26px;fill:currentColor}
+@media(prefers-reduced-motion:reduce){.wpp-flutuante{transition:none}}
+
+/* ---------- Revelação na rolagem ---------- */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visivel{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  *{transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================ HERO ============================ -->
+<header class="hero">
+  <div class="hero-media">
+    <!-- VÍDEO 01 — hero-corte.mp4 (14s, mudo, em repetição)
+         O poster é o quadro exibido enquanto carrega e em celular que bloqueia reprodução. -->
+    <video src="images/hero-corte.mp4" poster="images/hero-corte-poster.jpg"
+           autoplay muted loop playsinline preload="metadata"
+           aria-label="Chef Patrick San abrindo um peixe inteiro"></video>
+  </div>
+  <div class="wrap hero-texto">
+    <h1>Aprenda a cortar peixe com quem pesca o próprio peixe</h1>
+    <p class="hero-sub">Chef Patrick San é sushiman e pescador artesanal em Cananéia. Cozinha no Bacharel, o restaurante mais antigo da cidade, e ensina técnica japonesa aplicada ao pescado brasileiro.</p>
+    <a class="btn" href="https://hotmart.com/pt-br/marketplace/produtos/segredosdeumsushiman-pratosquentes/N55849057X" onclick="fbq('track','InitiateCheckout')">Quero aprender</a>
+  </div>
+</header>
+
+<!-- ========================= AUTORIDADE ========================= -->
+<section class="bloco autoridade">
+  <div class="wrap">
+    <div class="retrato media-alta reveal">
+      <!-- IMAGEM 02 — chef-retrato-garoupa.jpg — quem ele é / pescador -->
+      <img src="images/02-chef-retrato-garoupa.jpg" alt="Chef Patrick San de roupa de mergulho segurando uma garoupa" loading="lazy">
+    </div>
+    <h2 class="reveal">Quem ensina</h2>
+    <div class="reveal">
+      <p style="margin-top:1.35rem">Chef Patrick San cresceu na cozinha do Restaurante Bacharel, em Cananéia, aberto pela família e o mais antigo em atividade na cidade. Estudou gastronomia no Senac e trabalhou no Squid Row, em Auckland, na Nova Zelândia, restaurante especializado em frutos do mar.</p>
+      <p>Pesca o que serve. Trabalha com as espécies do estuário do Lagamar e produz o Namazuko, ova curada de bagre branco, técnica desenvolvida por ele.</p>
+      <p>Teve como referências os chefs Alex Atala e Ivan Ralston, e o Sensei Kazuki na cozinha japonesa.</p>
+    </div>
+    <dl class="fatos reveal">
+      <!-- O destino deste link vai para a página de reservas, se ela existir.
+           Enquanto isso, abre o WhatsApp com a mensagem de reserva pronta. -->
+      <div class="fato"><dt><a class="link-reserva" href="https://wa.me/5513981035704?text=Oi%20Chef%20Patrick,%20vim%20pela%20p%C3%A1gina%20de%20cursos%20e%20queria%20reservar%20um%20jantar%20no%20Bacharel" onclick="fbq('track','Contact')">Cozinha por reserva</a></dt><dd>Restaurante Bacharel, Cananéia</dd></div>
+      <div class="fato"><dt>Pescador artesanal</dt><dd>Estuário do Lagamar</dd></div>
+      <div class="fato"><dt>Ensina online há 5 anos</dt><dd>Cursos com avaliação 5,0</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ====================== O CURSO COMPLETO ====================== -->
+<section class="oferta bloco" id="curso">
+  <div class="wrap">
+    <div class="oferta-media media-quadrada reveal">
+      <!-- IMAGEM 03 — chef-corte-beira-dagua.jpg — técnica + território -->
+      <img src="images/03-chef-corte-beira-dagua.jpg" alt="Chef Patrick San cortando peixe de frente para a água" loading="lazy">
+    </div>
+    <h2 class="reveal">Segredos de um Sushiman<br>+ Pratos Quentes</h2>
+    <div class="reveal">
+      <p class="lede">Sushis e sashimis, tanto para quem está começando quanto para quem já cozinha e quer aprimorar a técnica. Começa no peixe inteiro e avança por técnicas de corte, sashimi, sushi, preparos japoneses e pratos quentes.</p>
+      <p class="lede">Técnicas de cozinha japonesa para fazer em casa, de onde você estiver e com o peixe que tiver. O curso não depende de peixe importado nem de equipamento profissional.</p>
+    </div>
+
+    <ul class="aulas reveal">
+      <li>Limpeza e corte do peixe inteiro, incluindo a sororoca</li>
+      <li>Técnicas de corte, preparação e montagem</li>
+      <li>Sashimi e sushi</li>
+      <li>Nigiri, gunkan maki, hossomaki, uramaki, temaki e sakana maki</li>
+      <li>Omakase</li>
+      <li>Pratos quentes e ceviche</li>
+    </ul>
+
+    <div class="figura figura-escura reveal" style="margin-top:2.5rem">
+      <!-- IMAGEM 04 — sushi-detalhe.jpg — o resultado das aulas -->
+      <img src="images/04-sushi-detalhe.jpg" alt="Fileira de nigiris montados pelo Chef Patrick San" loading="lazy">
+    </div>
+
+    <div class="reveal">
+      <p class="lede">O conteúdo completo, aula por aula, está descrito na página do curso na Hotmart.</p>
+    </div>
+
+    <div class="reveal" style="margin-top:2.25rem">
+<!-- LINK ATUAL: pagina de marketplace da Hotmart (adiciona um clique antes do pagamento).
+     SUBSTITUIR pelo link de checkout direto quando o Chef Patrick enviar.
+     Onde ele acha: conta de produtor > Produtos > o curso > Links > Link de checkout.
+     O link certo comeca com pay.hotmart.com -->
+      <a class="btn" href="https://hotmart.com/pt-br/marketplace/produtos/segredosdeumsushiman-pratosquentes/N55849057X" onclick="fbq('track','InitiateCheckout')">Quero aprender</a>
+      <p class="sob-btn">Acesso imediato após a compra · Assista quando e onde quiser</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================== OBJEÇÕES ========================== -->
+<section class="bloco">
+  <div class="wrap">
+    <h2 class="reveal" style="margin-bottom:2.25rem">Comece com o que você tem</h2>
+
+    <div class="objecao reveal">
+      <h3>Não tenho peixe bom onde moro.</h3>
+      <p>O curso foi construído para isso. Chef Patrick San ensina a avaliar e escolher pescado na peixaria ou no mercado da sua cidade, e a trabalhar com o que estiver disponível. Não é um curso sobre salmão importado.</p>
+    </div>
+
+    <div class="objecao reveal">
+      <h3>Não tenho faca japonesa nem equipamento.</h3>
+      <p>Você não precisa ter equipamentos profissionais para começar. O curso parte do conhecimento e da técnica, mostrando como trabalhar com o que você tem disponível.</p>
+    </div>
+
+    <div class="objecao reveal">
+      <h3>Nunca cortei um peixe inteiro na vida.</h3>
+      <p>As aulas começam do peixe fechado. Você não precisa saber nada antes.</p>
+    </div>
+
+    <div class="objecao reveal">
+      <h3>E se eu travar no meio do curso?</h3>
+      <p>As aulas foram organizadas para acompanhar seu aprendizado passo a passo. Você pode assistir novamente às explicações e avançar no seu ritmo. Surgiu alguma dúvida durante o aprendizado? Fale com o Chef Patrick San. Ele pode orientar você e ajudar a avançar no curso.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== PROVA =========================== -->
+<section class="prova bloco">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="nota">5,0</div>
+      <p class="nota-legenda">100% de avaliações positivas na Hotmart</p>
+    </div>
+    <!-- Espaço do depoimento removido pelo Chef Patrick.
+         Se houver avaliação escrita na Hotmart, vale recuperar:
+         <blockquote class="depoimento reveal">texto<cite>Nome</cite></blockquote> -->
+  </div>
+</section>
+
+<!-- ====================== CURSO DE SASHIMI ====================== -->
+<section class="bloco">
+  <div class="wrap">
+    <div class="figura media-quadrada reveal">
+      <!-- IMAGEM 05 — sashimi-close.jpg — resultado / corte -->
+      <img src="images/05-sashimi-close.jpg" alt="Fatias de sashimi cortadas pelo Chef Patrick San" loading="lazy">
+    </div>
+    <h2 class="reveal" style="margin-bottom:2rem">Sashimi: técnicas e segredos</h2>
+    <div class="secundario reveal">
+      <h3>Sashimi — técnicas e segredos</h3>
+      <p>Um curso dedicado ao corte. Escolha do pescado e higiene, preparação do ambiente, escolha e limpeza das facas, manipulação e armazenamento, ângulo correto do corte e montagem do prato. Sashimi e pratos frios.</p>
+      <p style="margin-top:1rem">A limpeza é ensinada espécie por espécie, com a técnica específica que cada uma pede: sororoca, salmão, robalo, linguado, carapau e xareu branco.</p>
+      <!-- [PENDENTE] Carga horária e número de aulas — não consta na Hotmart.
+           NOTA: este curso tem vídeo cadastrado na Hotmart — https://youtu.be/QsTSTI6KA_c
+           Avaliar se vale embutir aqui ou usar como criativo de anúncio. -->
+      <a class="btn" style="margin-top:1.75rem" href="https://hotmart.com/pt-br/marketplace/produtos/curso-de-tecnicas-especiais-para-sashimi/A50911589L" onclick="fbq('track','InitiateCheckout')">Quero aprender</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CURSO DE MATURAÇÃO ==================== -->
+<section class="maturacao bloco">
+  <div class="wrap">
+    <div class="figura media-quadrada reveal">
+      <!-- IMAGEM 06 — maturacao-camara.jpg — EXCLUSIVA desta seção -->
+      <img src="images/06-maturacao-camara.jpg" alt="Câmara de maturação de pescados do Chef Patrick San" loading="lazy">
+    </div>
+    <h2 class="reveal">Curso de Maturação de Pescados</h2>
+    <div class="reveal">
+      <!-- Texto a partir da descrição do próprio Chef Patrick.
+           NOTA: carga horária não confirmada (1 aula, cerca de 2h) e o curso ainda
+           não tem avaliações publicadas. Por isso nada disso aparece no texto. -->
+      <p>Os segredos da maturação de pescados: como montar sua câmara de maturação em casa e usufruir das possibilidades que a técnica abre.</p>
+    </div>
+    <div class="figura media-alta reveal" style="margin:2rem 0 0">
+      <!-- IMAGEM 07 — maturacao-pendurados.jpg — a melhor foto do conjunto -->
+      <img src="images/07-maturacao-pendurados.jpg" alt="Peixes pendurados na câmara de maturação" loading="lazy">
+    </div>
+    <a class="btn reveal" href="https://hotmart.com/pt-br/marketplace/produtos/curso-de-maturacao-de-pescados/O88289130E" onclick="fbq('track','InitiateCheckout')">Quero aprender</a>
+  </div>
+</section>
+
+<!-- ======================== PROFISSIONAL ======================== -->
+<section class="profissional bloco">
+  <div class="wrap">
+    <div class="profissional-media media-quadrada reveal">
+      <!-- IMAGEM 08 — chef-ensinando.jpg — transmissão do conhecimento -->
+      <img src="images/08-chef-ensinando.jpg" alt="Chef Patrick San ensinando numa cozinha profissional" loading="lazy">
+    </div>
+
+    <h2 class="reveal">Mentoria e trabalho sob medida</h2>
+    <p class="intro reveal">Além dos cursos gravados, Chef Patrick San atende de forma individual quem quer ir além da técnica solta e construir algo próprio. Formato e valores são definidos caso a caso, direto com ele.</p>
+
+    <!-- ============================================================
+         SUGESTÃO DE TEXTO — MENTORIA
+         Texto abaixo é uma proposta. Chef Patrick pode reescrever com as
+         próprias palavras. O que importa manter: os públicos atendidos
+         e a ausência de preço e duração.
+         ============================================================ -->
+    <div class="servico reveal">
+      <h3>Mentoria individual</h3>
+      <p>Acompanhamento direto com Chef Patrick San para quem quer desenvolver técnica, cardápio ou repertório com pescado. A conversa parte do que você já faz e de onde quer chegar.</p>
+      <p style="margin-top:.9rem;color:rgba(245,240,230,.72)">Costuma atender:</p>
+      <ul class="publicos">
+        <li>Cozinheiros amadores que querem sair da receita e entender o ingrediente</li>
+        <li>Chefs em início de carreira estruturando um menu a partir da pesca local</li>
+        <li>Donos de restaurante repensando a carta de pescados</li>
+        <li>Entusiastas de cozinha japonesa montando um omakase para receber em casa</li>
+        <li>Profissionais de gastronomia construindo uma narrativa própria, a partir do território e dos ingredientes que têm à mão</li>
+      </ul>
+    </div>
+
+    <div class="servico reveal">
+      <h3>Consultoria de cardápio</h3>
+      <p>Desenho ou revisão de carta com foco em pescado: escolha de espécies, aproveitamento integral, técnicas de preparo e conservação, e a história que o cardápio conta.</p>
+    </div>
+
+    <div class="servico reveal">
+      <h3>Treinamento de equipes</h3>
+      <p>Formação presencial da sua equipe em manipulação, corte e preparo de pescado, na sua cozinha.</p>
+      <div class="servico-media">
+        <!-- IMAGEM 09 — equipe-rio.jpg — prova de treinamento de equipes -->
+        <img src="images/09-equipe-rio.jpg" alt="Chef Patrick San ensinando uma equipe no Rio de Janeiro" loading="lazy">
+      </div>
+    </div>
+
+    <div class="servico reveal">
+      <h3>Cursos presenciais</h3>
+      <p>Você forma uma turma e o curso acontece na sua cidade, ou aqui no restaurante em Cananéia. Também atendemos eventos.</p>
+      <div class="dupla">
+        <figure>
+          <!-- IMAGEM 10 — aula-iguape-01.jpg -->
+          <img src="images/10-aula-iguape-01.jpg" alt="Chef Patrick San mostrando o pescado numa aula presencial" loading="lazy">
+        </figure>
+        <figure>
+          <!-- IMAGEM 11 — aula-iguape-02.jpg -->
+          <img src="images/11-aula-iguape-02.jpg" alt="Turma de um curso presencial do Chef Patrick San" loading="lazy">
+        </figure>
+      </div>
+    </div>
+
+    <!-- [OK] WhatsApp do Chef Patrick: +55 (13) 98103-5704 -->
+    <a class="btn btn-fantasma-claro" href="https://wa.me/5513981035704?text=Oi%20Chef%20Patrick,%20vim%20pela%20p%C3%A1gina%20de%20cursos%20e%20queria%20saber%20sobre%20mentoria" onclick="fbq('track','Contact')">Conversar com o Chef Patrick San</a>
+  </div>
+</section>
+
+<!-- ==================== ENCONTRE SEU CAMINHO ==================== -->
+<section class="caminhos bloco" id="caminhos">
+  <div class="wrap">
+    <h2 class="reveal">Encontre seu caminho</h2>
+    <p class="intro reveal">Três formas de aprender, do mais amplo ao mais específico. Todos com acesso imediato e garantia.</p>
+
+    <div class="caminho reveal">
+      <div class="caminho-media media-quadrada">
+        <!-- IMAGEM 12 — caminho-completo.jpg -->
+        <img src="images/12-caminho-completo.jpg" alt="Travessa de sashimi montada pelo Chef Patrick San" loading="lazy">
+      </div>
+      <div class="caminho-corpo">
+        <h3>Segredos de um Sushiman + Pratos Quentes</h3>
+        <p>Sushis e sashimis, para quem está começando e para quem já cozinha e quer aprimorar a técnica. Do peixe inteiro às técnicas de corte, aos preparos japoneses e aos pratos quentes.</p>
+        <div class="valor-menor">R$ 428,50</div>
+        <p class="garantia-linha">à vista, ou em até 12x no cartão · 30 dias de garantia</p>
+        <a class="btn" href="https://hotmart.com/pt-br/marketplace/produtos/segredosdeumsushiman-pratosquentes/N55849057X" onclick="fbq('track','InitiateCheckout')">Quero aprender</a>
+      </div>
+    </div>
+
+    <div class="caminho reveal">
+      <div class="caminho-media media-quadrada">
+        <!-- IMAGEM 13 — caminho-sashimi.jpg -->
+        <img src="images/13-caminho-sashimi.jpg" alt="Prato de sashimi finalizado pelo Chef Patrick San" loading="lazy">
+      </div>
+      <div class="caminho-corpo">
+        <h3>Sashimi — técnicas e segredos</h3>
+        <p>Limpeza de diversos peixes da nossa costa, com técnica específica para cada espécie. Sashimi e diversos pratos frios.</p>
+        <div class="valor-menor">R$ 169,00</div>
+        <p class="garantia-linha">7 dias de garantia</p>
+        <a class="btn" href="https://hotmart.com/pt-br/marketplace/produtos/curso-de-tecnicas-especiais-para-sashimi/A50911589L" onclick="fbq('track','InitiateCheckout')">Quero aprender</a>
+      </div>
+    </div>
+
+    <div class="caminho reveal">
+      <div class="caminho-media media-quadrada">
+        <!-- IMAGEM 14 — caminho-maturacao.jpg -->
+        <img src="images/14-caminho-maturacao.jpg" alt="Peixes inteiros preparados para a maturação" loading="lazy">
+      </div>
+      <div class="caminho-corpo">
+        <h3>Curso de Maturação de Pescados</h3>
+        <p>Os segredos da maturação de pescados e como montar sua câmara de maturação em casa.</p>
+        <div class="valor-menor">R$ 350,00</div>
+        <p class="garantia-linha">7 dias de garantia</p>
+        <a class="btn" href="https://hotmart.com/pt-br/marketplace/produtos/curso-de-maturacao-de-pescados/O88289130E" onclick="fbq('track','InitiateCheckout')">Quero aprender</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DÚVIDAS / WHATSAPP ===================== -->
+<section class="duvidas bloco">
+  <div class="wrap reveal">
+    <h2>Ainda ficou com alguma dúvida?</h2>
+    <p>Fale diretamente com o Chef Patrick San pelo WhatsApp antes de escolher seu curso.</p>
+    <a class="btn" href="https://wa.me/5513981035704?text=Oi%20Chef%20Patrick,%20vim%20pela%20p%C3%A1gina%20de%20cursos%20e%20queria%20tirar%20uma%20d%C3%BAvida" onclick="fbq('track','Contact')">Conversar com o Chef Patrick San</a>
+  </div>
+</section>
+
+<!-- ======================== ENCERRAMENTO ======================== -->
+<div class="figura reveal" style="margin-bottom:0">
+  <!-- IMAGEM 15 — fecho-chef-pratos.jpg -->
+  <img src="images/15-fecho-chef-pratos.jpg" alt="Chef Patrick San servindo os pratos que preparou" loading="lazy">
+</div>
+<section class="bloco encerramento">
+  <div class="wrap reveal">
+    <h2>Aprenda com quem faz</h2>
+    <p>Pescar, limpar, cortar e servir o peixe é o trabalho do Chef Patrick San todos os dias. É desse trabalho que vem o que ele ensina.</p>
+    <p class="linha-reserva">Ele também cozinha por reserva no Bacharel, em Cananéia. <a href="https://wa.me/5513981035704?text=Oi%20Chef%20Patrick,%20vim%20pela%20p%C3%A1gina%20de%20cursos%20e%20queria%20reservar%20um%20jantar%20no%20Bacharel" onclick="fbq('track','Contact')">Reservar um jantar</a></p>
+  </div>
+</section>
+
+<!-- =========================== RODAPÉ =========================== -->
+<footer>
+  <div class="wrap">
+    <div class="marca">Chef Patrick San</div>
+    <div>Cananéia, São Paulo</div>
+    <nav>
+      <a href="../index.html">Site</a>
+      <a href="https://instagram.com/tricksan_">Instagram</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var alvos = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window) ||
+     window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    alvos.forEach(function(el){el.classList.add('visivel')});
+    return;
+  }
+  var obs = new IntersectionObserver(function(entradas){
+    entradas.forEach(function(e,i){
+      if(e.isIntersecting){
+        setTimeout(function(){e.target.classList.add('visivel')}, i*120);
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:.12, rootMargin:'0px 0px -8% 0px'});
+  alvos.forEach(function(el){obs.observe(el)});
+})();
+</script>
+
+<!-- ============================================================
+     A DECIDIR — ASSINATURA DA MARCA
+     A descrição do curso principal na Hotmart diz "Patrick San, Sushiman e
+     proprietário do @NaCanoa_Sushi". Esta página assina como Chef Patrick San.
+     Definir qual marca assina os produtos e alinhar nos dois lugares.
+     ============================================================ -->
+
+<!-- ============================================================
+     MAPA DE MÍDIA — CHEF PATRICK SAN
+     Tudo em: cursos/images/
+     Ordem de aparição na página. Todas já tratadas e nomeadas.
+
+     01  hero-corte.mp4 + hero-corte-poster.jpg  — Topo (vídeo, 14s, mudo)
+     02  02-chef-retrato-garoupa.jpg             — Quem ensina (4:5)
+     03  03-chef-corte-beira-dagua.jpg           — O curso completo (1:1)
+     04  04-sushi-detalhe.jpg                    — O curso completo (3:2)
+     05  05-sashimi-close.jpg                    — Curso de Sashimi (1:1)
+     06  06-maturacao-camara.jpg                 — Curso de Maturação (1:1)
+     07  07-maturacao-pendurados.jpg             — Curso de Maturação (4:5)
+     08  08-chef-ensinando.jpg                   — Mentoria (1:1)
+     09  09-equipe-rio.jpg                       — Treinamento de equipes (3:2)
+     10  10-aula-iguape-01.jpg                   — Cursos presenciais (3:2)
+     11  11-aula-iguape-02.jpg                   — Cursos presenciais (3:2)
+     12  12-caminho-completo.jpg                 — Encontre seu caminho (1:1)
+     13  13-caminho-sashimi.jpg                  — Encontre seu caminho (1:1)
+     14  14-caminho-maturacao.jpg                — Encontre seu caminho (1:1)
+     15  15-fecho-chef-pratos.jpg                — Encerramento (3:2)
+
+     Fotos verticais usam .media-quadrada (1:1) ou .media-alta (4:5)
+     em vez do 3:2 padrão, para não cortar o assunto.
+     ============================================================ -->
+
+<a class="wpp-flutuante"
+   href="https://wa.me/5513981035704?text=Oi%20Chef%20Patrick,%20vim%20pela%20p%C3%A1gina%20de%20cursos%20e%20queria%20tirar%20uma%20d%C3%BAvida"
+   onclick="fbq('track','Contact')"
+   target="_blank" rel="noopener"
+   aria-label="Conversar com o Chef Patrick San no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 2H4a2 2 0 00-2 2v12a2 2 0 002 2h4v4l5-4h7a2 2 0 002-2V4a2 2 0 00-2-2z"/></svg>
+</a>
+
+</body>
+</html>
